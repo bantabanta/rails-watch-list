@@ -1,0 +1,50 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" /> %>
+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"" href="#">Movie Lists</a>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Show Lists</a>
+            <a class="dropdown-item" href="#">New List</a>
+          </div>
+          </li>
+          </li>
+          <li class="nav-item dropdown">
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/rayan" />
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Show Lists</a>
+              <a class="dropdown-item" href="#">New List</a>
+            </div>
+          </li>
+          <!--li class="nav-item"-->
+          <!--/li-->
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://imgs.search.brave.com/kK4TCjxjWb1iNPyPU7_UasY9iBOm16jANRjavm0DK7Y/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9tb3Rp/b25hcnJheS5pbWdp/eC5uZXQvcHJldmll/dy05MDI2NDMtNlZT/eEc4bVJRTlc2OE5q/aC1sYXJnZS5qcGc_/dz0zODQwJnE9NjAm/Zml0PW1heCZhdXRv/PWZvcm1hdA);">
+  <div class="container">
+    <h1>Custom Movies</h1>
+    <p>just for you</p>
+  </div>
+</div>
+<div class="container"><br><h5>My Movie Lists</h5>
+<ul>
+  <% @lists.each do |list| %>
+    <li>
+      <%= link_to list.name , list_path(list)  %>
+      <%# <%= link_to "X", list_path(list), method: :delete, data: {confirm: "Are you sure?"} %>
+    </li>
+  <% end %>
+</ul>
+<br>
+<%= link_to "➕ Add a new list", new_list_path, class: "btn btn-primary" %>
+</div>
